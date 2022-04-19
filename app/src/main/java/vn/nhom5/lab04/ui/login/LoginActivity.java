@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -23,9 +24,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import vn.nhom5.lab04.R;
-import vn.nhom5.lab04.ui.login.LoginViewModel;
-import vn.nhom5.lab04.ui.login.LoginViewModelFactory;
+import vn.nhom5.lab04.ui.display.DisplayActivity;
 import vn.nhom5.lab04.databinding.ActivityLoginBinding;
+import vn.nhom5.lab04.ui.register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -45,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText usernameEditText = binding.username;
         final EditText passwordEditText = binding.password;
         final Button loginButton = binding.login;
+        final Button registerButton = binding.register;
         final ProgressBar loadingProgressBar = binding.loading;
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
@@ -120,6 +122,14 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+                startActivity(new Intent(LoginActivity.this, DisplayActivity.class));
+            }
+        });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
     }
