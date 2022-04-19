@@ -3,10 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/BMW/Source/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1606425702811245" />
-        <entry key="..\:/BMW/Source/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1721311475409836" />
-        <entry key="..\:/BMW/Source/app/src/main/res/layout/activity_display.xml" value="0.4" />
-        <entry key="..\:/BMW/Source/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2833333333333333" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.26927083333333335" />
       </map>
     </option>
   </component>
