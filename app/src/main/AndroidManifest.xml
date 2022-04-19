@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginRegisterApp">
         <activity
-            android:name=".ui.login.DisplayActivity"
+            android:name=".ui.display.DisplayActivity"
             android:exported="false" />
         <activity
             android:name=".ui.login.LoginActivity"
@@ -19,6 +19,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.DEFAULT"></category>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

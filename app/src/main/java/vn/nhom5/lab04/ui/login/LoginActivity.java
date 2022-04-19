@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -23,8 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import vn.nhom5.lab04.R;
-import vn.nhom5.lab04.ui.login.LoginViewModel;
-import vn.nhom5.lab04.ui.login.LoginViewModelFactory;
+import vn.nhom5.lab04.ui.display.DisplayActivity;
 import vn.nhom5.lab04.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
@@ -120,6 +120,7 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+                startActivity(new Intent(LoginActivity.this, DisplayActivity.class));
             }
         });
     }

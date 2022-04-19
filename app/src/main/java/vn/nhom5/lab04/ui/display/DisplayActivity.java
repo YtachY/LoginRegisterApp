@@ -1,4 +1,4 @@
-package vn.nhom5.lab04.ui.login;
+package vn.nhom5.lab04.ui.display;
 
 import androidx.appcompat.app.AppCompatActivity;
 
