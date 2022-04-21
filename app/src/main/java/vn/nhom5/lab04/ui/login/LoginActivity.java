@@ -130,6 +130,7 @@ public class LoginActivity extends AppCompatActivity {
                 bundle.putSerializable("Object_loggedInUser", user);
                 intent.putExtras(bundle);
                 startActivity(intent);
+                loadingProgressBar.setVisibility(View.GONE);
             }
         });
 

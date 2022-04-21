@@ -23,13 +23,13 @@ public class DisplayActivity extends AppCompatActivity {
             LoggedInUser user = (LoggedInUser) bundleReceive.get("Object_loggedInUser");
             if (user != null){
                 if (sqLiteConnector.checkUser(user.getName(), user.getPassword())) {
-                    String message = String.format("Logged in successfully!!!, user %s is already in database",
+                    String message = String.format("Logged in successfully!!!\nUser %s is already in database",
                             user.getName());
                     Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                     Log.d("NHOM5", message);
                 }
                 else {
-                    String message = String.format("Logged in Failed. User %s doesn't exist!!!",
+                    String message = String.format("Logged in Failed\nUser %s doesn't exist!!!",
                             user.getName());
                     Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                     Log.d("NHOM5", message);
