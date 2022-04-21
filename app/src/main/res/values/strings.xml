@@ -2,6 +2,7 @@
     <string name="app_name">LoginRegisterApp</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
+    <string name="register_username">Username</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in</string>
     <string name="action_register_in">Register</string>
@@ -10,4 +11,5 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="register_email">email</string>
 </resources>
