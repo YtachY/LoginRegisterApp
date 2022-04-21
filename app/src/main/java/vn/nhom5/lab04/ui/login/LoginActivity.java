@@ -1,17 +1,8 @@
 package vn.nhom5.lab04.ui.login;
 
 import android.app.Activity;
-
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -23,9 +14,16 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
 import vn.nhom5.lab04.R;
-import vn.nhom5.lab04.ui.display.DisplayActivity;
+import vn.nhom5.lab04.data.model.LoggedInUser;
 import vn.nhom5.lab04.databinding.ActivityLoginBinding;
+import vn.nhom5.lab04.ui.display.DisplayActivity;
 import vn.nhom5.lab04.ui.register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -120,9 +118,18 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
+//                loginViewModel.login(usernameEditText.getText().toString(),
+//                        passwordEditText.getText().toString());
+
+                LoggedInUser user = new LoggedInUser("19520025",
+                        usernameEditText.getText().toString(),"",
                         passwordEditText.getText().toString());
-                startActivity(new Intent(LoginActivity.this, DisplayActivity.class));
+
+                Intent intent = new Intent(LoginActivity.this, DisplayActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Object_loggedInUser", user);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
