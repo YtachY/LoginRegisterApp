@@ -1,21 +1,18 @@
 package vn.nhom5.lab04.ui.register;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.MessageFormat;
 
-import vn.nhom5.lab04.R;
 import vn.nhom5.lab04.data.SQLiteConnector;
 import vn.nhom5.lab04.data.model.LoggedInUser;
-import vn.nhom5.lab04.databinding.ActivityLoginBinding;
 import vn.nhom5.lab04.databinding.ActivityRegisterBinding;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -41,14 +38,16 @@ public class RegisterActivity extends AppCompatActivity {
                             emailEditText.getText().toString(),
                             passwordEditText.getText().toString());
 
-                    sqLiteConnector.addUscer(user);
+                    sqLiteConnector.addUser(user);
                     String message = MessageFormat.format("User {0} added successfully",
                             usernameEditText.getText().toString());
                     Log.d("TEAM5", message);
                     Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                    finish();
                 }
                 catch (Exception exception) {
                     exception.printStackTrace();
+                    Toast.makeText(getApplicationContext(), exception.toString(), Toast.LENGTH_LONG).show();
                 }
             }
         });

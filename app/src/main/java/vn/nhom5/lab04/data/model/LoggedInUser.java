@@ -1,10 +1,12 @@
 package vn.nhom5.lab04.data.model;
 
+import java.io.Serializable;
+
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository
  */
 
-public class LoggedInUser {
+public class LoggedInUser implements Serializable {
 
     private String userId;
     private String name;
@@ -12,6 +14,7 @@ public class LoggedInUser {
     private String password;
 
     public LoggedInUser() {
+        userEmail = "";
     }
 
     public LoggedInUser(String userId, String name, String userEmail, String password) {
